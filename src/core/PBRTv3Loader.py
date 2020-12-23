@@ -1,6 +1,6 @@
-import PBRTv3Lex
-import PBRTv3Yacc
-from Directives import *
+from . import PBRTv3Lex
+from . import PBRTv3Yacc
+from .Directives import *
 import sys
 
 class PBRTv3Loader:

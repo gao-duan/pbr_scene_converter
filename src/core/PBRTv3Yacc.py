@@ -1,6 +1,6 @@
 import sys
 import operator
-import PBRTv3Lex
+from . import PBRTv3Lex
 import ply.yacc as yacc
 
 # Get the token map
@@ -164,7 +164,7 @@ def p_empty(t):
     'empty : '
 
 def p_error(t):
-    print str(t) + "Whoa. We're hosed"
+    print (str(t) + "Whoa. We're hosed")
 
 import profile
 
@@ -187,4 +187,4 @@ def parse(data, debug=0):
 #     if not s:
 #         continue
 #     b = parser.parse(s)
-#     print 'parsed: ' + str(b)
+#     print('parsed: ') + str(b)

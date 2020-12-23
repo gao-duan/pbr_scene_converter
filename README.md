@@ -1,6 +1,6 @@
 # PBR Scene Converter
 
-This software can be used to convert scene files between different renderer file formats. Currently, our software supports *Mitsuba*, *PBRT v3* and *LuxRender* file formats.   
+This software can be used to convert scene files between different renderer file formats. Currently, our software supports *Mitsuba*, *PBRT v3*  file formats.   
 
 We are currently an alpha version. See `Limitations` for further details.
 
@@ -31,4 +31,3 @@ Our converter *currently* does not support:
     - Hair materials
     - Participating Media
     - Animations
-    - Converting colored metals to and from LuxRender

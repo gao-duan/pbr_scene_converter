@@ -2,7 +2,7 @@
 
 import xml.etree.ElementTree as ET
 import numpy as np
-from Directives import *
+from .Directives import *
 
 class MitsubaLoader:
 
@@ -51,8 +51,8 @@ class MitsubaLoader:
         matrixElement = sensorElement.find('transform').find('matrix')
         if matrixElement is not None:
             matrix = matrixElement.get('value')
-            sensor.transform.matrix = map(float, matrix.strip().split(' '))
-            sensor.transform.matrix = [sensor.transform.matrix[i:i + 4] for i in xrange(0, len(sensor.transform.matrix), 4)]
+            sensor.transform.matrix = [float(i) for i in matrix.strip().split(' ')]
+            sensor.transform.matrix = [sensor.transform.matrix[i:i + 4] for i in range(0, len(sensor.transform.matrix), 4)]
         else:
             #search for lookat translate scale
             pass
@@ -299,8 +299,8 @@ class MitsubaLoader:
 
             if transformElement.find('matrix') is not None:
                 matrix = transformElement.find('matrix').get('value')
-                matrix =  map(float, matrix.strip().split(' '))
-                transform.matrix = [matrix[i:i + 4] for i in xrange(0, len(matrix), 4)]
+                matrix =  [float(i) for i in matrix.strip().split(' ')]
+                transform.matrix = [matrix[i:i + 4] for i in range(0, len(matrix), 4)]
 
             else:
                 # extract other elements
