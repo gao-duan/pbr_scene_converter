@@ -241,7 +241,3 @@ class PBRTv3Loader:
     def __init__(self, filename):
         sceneStruct = self.importFile(filename)
         self.scene = self.loadScene(sceneStruct)
-
-# if __name__ == '__main__':
-#     loader = PBRTv3Loader(sys.argv[1])
-    

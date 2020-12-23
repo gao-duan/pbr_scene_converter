@@ -2,6 +2,7 @@ import sys
 import operator
 from . import PBRTv3Lex
 import ply.yacc as yacc
+import os
 
 # Get the token map
 tokens = PBRTv3Lex.tokens
@@ -169,7 +170,10 @@ def p_error(t):
 import profile
 
 # Build the grammar
-parser = yacc.yacc()
+abs_file = os.path.dirname(os.path.abspath(__file__))
+out_dir = os.path.join(abs_file, '.yacc_tmp_output/')
+os.makedirs(out_dir, exist_ok=True)
+parser = yacc.yacc(outputdir=out_dir)
 
 def parse(data, debug=0):
     parser.error = 0
